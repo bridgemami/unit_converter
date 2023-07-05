@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Metic and Imperial unit converter. Converts meters to/from feet, liters to/from gallons, and kilograms to/from pounds"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Michael Bridgeman" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!--no jpg file-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Unit Converter</title>
+  </head>
+  <body>
+    <header>
+      <h1>Metric/Imperial Unit Converter</h1>
+      <section id="header-section">
+        <input type="number" name="user_input" placeholder="0" id="unit" />
+        <button id="convert">Convert</button>
+      </section>
+    </header>
+    <main>
+      <section>
+        <h3>Distance (Meters/Feet &amp; Kilometers/Miles )</h3>
+        <p id="shortDistance"></p>
+        <p id="longDistance"></p>
+      </section>
+      <section>
+        <h3>Volume (Liters/Gallons)</h3>
+        <p id="volume"></p>
+      </section>
+      <section>
+        <h3>Mass (Kilograms/Pounds)</h3>
+        <p id="mass"></p>
+      </section>
+      <section>
+        <h3>Temperature (Celsius/Fahrenheit)</h3>
+        <p id="temperature"></p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
