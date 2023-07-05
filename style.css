@@ -46,7 +46,6 @@ h2 {
 
 #unit {
     background: none;
-    /* color: white; */
     border: solid 5px black;
     text-align: center;
     margin: 0 auto 20px auto; 
@@ -59,7 +58,6 @@ h2 {
 
 #unit::placeholder {
     background: none;
-    color: white;
     text-align: center;
 }
 
