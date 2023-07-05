@@ -1,5 +1,6 @@
 const unit = document.getElementById("unit");
 const convert = document.getElementById("convert");
+const reset = document.getElementById("reset");
 // distance instead of length so it would not be confused with .length method
 const shortDistance = document.getElementById("shortDistance");
 const longDistance = document.getElementById("longDistance");
@@ -43,7 +44,7 @@ const unitConverter = (convertFactor, measurement, imperial, metric) => {
   } 
   //if the user enters a negative number
   else if (unitValue < 0) {
-    measurement.textContent = "This cannot be negative.";
+    measurement.textContent = "This cannot be a negative number.";
     convertTemperatures(unitValue);
   } 
 //   any value more than 1
@@ -53,6 +54,12 @@ const unitConverter = (convertFactor, measurement, imperial, metric) => {
   }
 };
 
+//rest the conversions
+const clear = (measurement) => {
+    measurement.textContent = "";
+    unit.value= 0
+}
+
 //convertFactor, measurement(choices: distance, volume, mass), imperial, metric
 convert.addEventListener("click", () => {
   unitConverter(3.281, shortDistance, "feet", "meters"),
@@ -60,3 +67,9 @@ convert.addEventListener("click", () => {
     unitConverter(0.264, volume, "gallons", "liters"),
     unitConverter(2.204, mass, "pounds", "kilograms");
 });
+
+reset.addEventListener("click", () => {
+      clear(shortDistance), clear(longDistance), clear(volume), clear(mass), clear(temperature), clear(temperature)
+});
+
+

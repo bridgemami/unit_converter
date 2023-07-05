@@ -19,26 +19,32 @@
     <header>
       <h1>Metric/Imperial Unit Converter</h1>
       <section id="header-section">
-        <input type="number" name="user_input" placeholder="0" id="unit" />
-        <button id="convert">Convert</button>
+        <label for="unit">
+        <input type="number" name="unit" placeholder="0" id="unit" />
+      </label>
+        <button id="convert" class="btn">Convert</button>
+        <button id="reset" class="btn">Reset</button>
       </section>
     </header>
     <main>
-      <section>
-        <h3>Distance (Meters/Feet &amp; Kilometers/Miles )</h3>
+      <section class="unitBox">
+        <h2>Short Distance (Meters/Feet)</h2>
         <p id="shortDistance"></p>
+      </section>
+      <section class="unitBox">
+        <h2>Long Distance (Kilometers/Miles)</h2>
         <p id="longDistance"></p>
       </section>
-      <section>
-        <h3>Volume (Liters/Gallons)</h3>
+      <section class="unitBox">
+        <h2>Volume (Liters/Gallons)</h2>
         <p id="volume"></p>
       </section>
-      <section>
-        <h3>Mass (Kilograms/Pounds)</h3>
+      <section class="unitBox">
+        <h2>Mass (Kilograms/Pounds)</h2>
         <p id="mass"></p>
       </section>
-      <section>
-        <h3>Temperature (Celsius/Fahrenheit)</h3>
+      <section class="unitBox">
+        <h2>Temperature (Celsius/Fahrenheit)</h2>
         <p id="temperature"></p>
       </section>
     </main>

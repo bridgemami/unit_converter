@@ -1,9 +1,8 @@
 body {
-    display: flex;
-    flex-direction: column;
     margin: 0;
     padding: 0;
-    width: 100vw;
+    box-sizing: border-box;
+    text-align: center;
 }
 header {
     background: linear-gradient(0deg, hsla(110, 100%, 50%, 1) 0%, hsla(61, 100%, 48%, 1) 64%);
@@ -12,15 +11,37 @@ header {
     flex-direction: column;
     align-items: center;
     padding-bottom: 30px;
-    flex-wrap: wrap;
 }
 main {
-}
-#header-section {
+    background-color: #1F2937;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    color: #CCC1FF;
+    font-size: 1.5rem;
+}
+
+.unitBox {
+  background: #273549;
+  margin: 20px 0;
+  padding: 0 10px 20px 10px;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.unitBox > p {
+    color:#ffffff;
+}
+#header-section {
+    display: block;
+    margin: 0 auto;  
 }
 
 #unit {
@@ -28,8 +49,12 @@ main {
     color: white;
     border: solid 5px white;
     text-align: center;
-    margin: 0 0 20px 0; 
+    margin: 0 auto 20px auto; 
     font-size: 2rem; 
+    flex: 1 0 10%;
+    max-width: 100px;
+    display: block;
+    box-sizing: border-box;
 }
 
 #unit::placeholder {
@@ -39,7 +64,7 @@ main {
 }
 
 
-#convert {
+.btn {
     background-color: #ffffff;
     padding: 10px 20px;
     border:none;
@@ -47,4 +72,8 @@ main {
     font-size: 1rem;
     color:black;
     cursor: pointer;
+    flex: 1 0 10%;
+    margin: 0 auto 10px auto;
+    display: block;
+    min-width: 100px;
 }
