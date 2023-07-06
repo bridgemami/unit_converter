@@ -13,33 +13,33 @@ const unitConverter = (convertFactor, measurement, imperial, metric) => {
   const multipleConversion = (unit.value * convertFactor).toFixed(2);
   const divideConversion = (unit.value / convertFactor).toFixed(2);
   //output line for converting the unit
-  const moreThanOne = `${unitValue} ${metric} = ${multipleConversion} ${imperial} | ${unitValue} ${imperial} = ${divideConversion} ${metric}`;
+  const moreThanOne = `${unitValue} ${metric} = ${multipleConversion} ${imperial}<span>${unitValue} ${imperial} = ${divideConversion} ${metric}</span>`;
       //variables for a unitValue = 1
   const singularMetric = metric.replace(metric.charAt(metric.length - 1), "");
   const singularImperial = imperial.replace(
     imperial.charAt(imperial.length - 1),
     ""
   );
-  const one = `${unitValue} ${singularMetric} = ${multipleConversion} ${imperial} | ${unitValue} ${singularImperial} = ${divideConversion} ${metric}`;
+  const one = `${unitValue} ${singularMetric} = ${multipleConversion} ${imperial}<span>${unitValue} ${singularImperial} = ${divideConversion} ${metric}</span>`;
   //the function to convert temperature
   const convertTemperatures = (degree) => {
     const celToFah = ((degree * 9.0) / 5.0 + 32.0).toFixed(2);
     const fahToCel = (((degree - 32.0) * 5.0) / 9.0).toFixed(2);
-    temperature.textContent = `${degree}° Celsius = ${celToFah}° Fahrenheit | ${degree}° Fahrenheit = ${fahToCel}° Celsius`;
+    temperature.innerHTML = `${degree}° Celsius = ${celToFah}° Fahrenheit<span>${degree}° Fahrenheit = ${fahToCel}° Celsius</span>`;
   };
   //to check if the users enter a one and change the grammar
   if (unitValue === 1) {
     //convert feet to foot for one unit
     if (imperial === "feet") {
-      measurement.textContent = `${unitValue} ${singularMetric} = ${multipleConversion} ${imperial} | ${unitValue} foot = ${divideConversion} ${metric}`;
+      measurement.innerHTML = `${unitValue} ${singularMetric} = ${multipleConversion} ${imperial}<span>${unitValue} foot = ${divideConversion} ${metric}</span>`;
       convertTemperatures(unitValue);
     } else {
-      measurement.textContent = one;
+      measurement.innerHTML = one;
     }
   } 
   //if the user enters a zero
   else if (unitValue === 0) {
-    measurement.textContent = `${unitValue} ${metric} = 0 ${imperial} | ${unitValue} ${imperial} = 0 ${metric}`;
+    measurement.innerHTML = `${unitValue} ${metric} = 0 ${imperial}<span> ${unitValue} ${imperial} = 0 ${metric}</span>`;
     convertTemperatures(unitValue);
   } 
   //if the user enters a negative number
@@ -49,7 +49,7 @@ const unitConverter = (convertFactor, measurement, imperial, metric) => {
   } 
 //   any value more than 1
   else {
-    measurement.textContent = moreThanOne;
+    measurement.innerHTML = moreThanOne;
     convertTemperatures(unitValue);
   }
 };

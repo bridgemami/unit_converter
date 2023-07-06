@@ -38,6 +38,7 @@ h2 {
 
 .unitBox > p {
     color:#ffffff;
+    font-size: 1.1rem;
 }
 #header-section {
     display: block;
@@ -75,4 +76,9 @@ h2 {
     margin: 0 auto 10px auto;
     display: block;
     min-width: 100px;
+}
+
+span {
+    display: block;
+    margin-top: 10px;
 }
